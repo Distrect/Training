@@ -1,0 +1,24 @@
+body {
+  background-color: rgb(107, 233, 233);
+}
+
+h2 {
+  color: rgb(197, 0, 0);
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.header {
+  padding: 0, 5rem;
+  border: 15rem;
+  border-color: blue;
+}
+
+.number {
+  text-align: center;
+  color: rgb(20, 17, 194);
+  font-size: 3.5rem;
+}
+.buttons {
+  text-align: center;
+}
