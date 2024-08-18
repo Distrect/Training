@@ -1,0 +1,22 @@
+.current,
+.prev {
+  display: flex;
+  border-style: solid;
+  width: 125px;
+  height: 25px;
+  box-sizing: border-box;
+  border: 1px solid;
+  align-items: flex-end;
+  align-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+  grid-column: 1/-1;
+}
+.buttons {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}

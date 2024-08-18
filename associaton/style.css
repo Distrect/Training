@@ -1,0 +1,14 @@
+.game-container {
+  align-items: center;
+}
+
+.card {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: yellow;
+  width: 7rem;
+  height: fit-content;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
