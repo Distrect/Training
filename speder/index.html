@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Speed</title>
+    <style>
+      .par {
+        display: block;
+        border-style: groove;
+        width: 750px;
+        height: 350px;
+      }
+      .inps {
+        opacity: 0;
+      }
+      .inds {
+        display: flex;
+        flex-direction: row;
+        border-style: groove;
+        width: 60px;
+      }
+      .active {
+        text-decoration: underline;
+      }
+      .selected {
+        background-color: yellow;
+      }
+      .correct {
+        background-color: aquamarine;
+      }
+      .wrong {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="par"></div>
+    <div class="inputs">
+      <input type="text" class="inps" />
+    </div>
+    <div class="indicators">
+      <span class="inds">Time:<span id="time">60</span></span>
+      <span class="inds">Wpm:<span id="wpm">0</span></span>
+      <span class="inds">Cpm:<span id="cpm">0</span></span>
+      <span class="inds">Mis:<span id="mis">0</span></span>
+    </div>
+    <script src="paragraphs.js"></script>
+    <script src="speed.js"></script>
+  </body>
+</html>

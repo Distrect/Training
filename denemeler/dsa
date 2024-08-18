@@ -1,0 +1,88 @@
+const vehicle = document.querySelector(".veh");
+const board = document.querySelector(".area");
+
+let bulletTime;
+let start, prev;
+let done = false;
+
+let vehicleLoc = {
+  y: 474,
+  x: 252,
+};
+let speed = 6;
+
+renderVehicle();
+
+document.addEventListener("keydown", move);
+
+function check(bullet, enem) {
+  let b = bullet.getBoundingClientRect();
+  let e = enem.getBoundingClientRect();
+  console.log(b);
+  console.log(e);
+}
+
+function enemies() {
+  let enemy = document.createElement("div");
+  enemy.className = "enemy";
+  enemy.style.top = "50px";
+  enemy.style.left = "50px";
+  board.appendChild(enemy);
+  return enemy;
+}
+
+function renderBullet(bullet, time) {
+  let pos = bullet.style.top;
+  pos = pos.slice(0, -2);
+  bullet.style.top = `${pos - 5}px`;
+  board.appendChild(bullet);
+
+  check(bullet, enemies());
+
+  if (Number(pos) < 12) {
+    board.removeChild(bullet);
+    done = true;
+  }
+
+  if (!done) {
+    window.requestAnimationFrame((time) => {
+      renderBullet(bullet, time);
+    });
+  } else {
+    done = false;
+  }
+}
+
+function fireBullet() {
+  let rect = vehicle.getBoundingClientRect();
+  let bullet = document.createElement("div");
+  bullet.className = "bull";
+  bullet.style.top = `${rect.top - 12}px`;
+  bullet.style.left = `${rect.left + 7}px`;
+  window.requestAnimationFrame((time) => {
+    renderBullet(bullet, time);
+  });
+}
+
+function renderVehicle() {
+  vehicle.style.top = `${vehicleLoc.y}px`;
+  vehicle.style.left = `${vehicleLoc.x}px`;
+}
+
+function move(e) {
+  if (e.key === "ArrowUp" && vehicleLoc.y > 9) {
+    vehicleLoc.y -= speed;
+    renderVehicle();
+  } else if (e.key === "ArrowDown" && vehicleLoc.y < 480) {
+    vehicleLoc.y += speed;
+    renderVehicle();
+  } else if (e.key === "ArrowLeft" && vehicleLoc.x > 9) {
+    vehicleLoc.x -= speed;
+    renderVehicle();
+  } else if (e.key === "ArrowRight" && vehicleLoc.x < 479) {
+    vehicleLoc.x += speed;
+    renderVehicle();
+  } else if (e.key === " ") {
+    fireBullet();
+  }
+}

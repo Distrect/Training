@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <audio id="audio"></audio>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Music Player</title>
+  </head>
+
+  <body>
+    <div class="modal" id="modal">
+      <div class="box">
+        <h3>Create Folder</h3>
+        <small class="err"></small>
+        <input
+          type="text"
+          name=""
+          id="modal-input"
+          placeholder="Please enter Folder Name"
+        />
+        <div class="modal-btns">
+          <button class="yes">Save</button>
+          <button class="no">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="input-modal" id="nmodal">
+      <div class="box">
+        <div class="box-header">
+          <h3>Header</h3>
+        </div>
+        <div class="modal-body">
+          <div class="file-input-div">
+            <label for="file-inputer" id="label1">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              <input type="file" id="file-inputer" accept=".mp3" />
+            </label>
+          </div>
+          <div class="preview"></div>
+          <div class="file-infos">
+            <label for="artist">Artsit:</label>
+            <input
+              type="text"
+              name="artist"
+              placeholder="Enter music artist...."
+              id="artist"
+            />
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="myes">Save</button>
+          <button id="mcancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav class="sidebar">
+        <div class="side-head">
+          <a href="#" id="close">
+            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="music-list">
+          <span id="empty">Empty</span>
+          <ul id="ul-li">
+            <!-- <li>
+              <a href="#">
+                <input
+                  type="checkbox"
+                  name="Bir Çareis Bulunur"
+                  id="list-check"
+                />
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i
+                  class="fa fa-user-circle-o fa-2x"
+                  id="icn"
+                  aria-hidden="true"
+                ></i>
+                <p id="inf">
+                  <span>Bir Çaresi Bulunur</span>
+                  <small>Sertap Erener</small>
+                </p>
+              </a>
+            </li> -->
+          </ul>
+        </div>
+        <div class="foot">
+          <button id="create-playlist">Create Playlist</button>
+          <div class="playlistor">
+            <button id="save-playlist">Save</button>
+            <button id="cancel-playlist">Cancel</button>
+            <span id="playlist-count">0</span>
+          </div>
+        </div>
+      </nav>
+      <div class="content-container">
+        <div class="header">
+          <div class="search">
+            <div class="auto">
+              <input
+                type="text"
+                name="musicsearch"
+                id="searchm"
+                placeholder="Search...."
+              />
+              <div class="auto-list">
+                <ul></ul>
+              </div>
+            </div>
+
+            <div class="autocomp"></div>
+          </div>
+        </div>
+        <div class="music-container">
+          <div class="music-box">
+            <div class="music-inner">
+              <div>
+                <img src="./resources/calm.png" alt="" id="mimg" />
+              </div>
+              <div class="music-info">
+                <p class="m">No playing music</p>
+                <p class="s">YTD</p>
+              </div>
+              <div class="controller">
+                <div class="range">
+                  <input type="range" id="range" value="0" />
+                  <span class="v" id="v">00:00</span>
+                </div>
+                <div class="btns">
+                  <i class="fa fa-random cics" aria-hidden="true" id="rand"></i>
+                  <div>
+                    <i
+                      class="fa fa-backward cics"
+                      id="prevTrack"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="cics fa fa-play" aria-hidden="true" id="play"></i>
+                    <i
+                      class="fa fa-forward cics"
+                      id="nextTrack"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <i class="fa fa-repeat cics" id="loop" aria-hidden="true"></i>
+                  <div class="volume">
+                    <input
+                      type="range"
+                      id="volume-controller"
+                      orient="vertical"
+                      min="0"
+                      max="100"
+                      value="0"
+                    />
+                    <i
+                      class="fa fa-volume-up cics"
+                      aria-hidden="true"
+                      id="mute"
+                      value="on"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="music-footer">
+          <div class="music-footer-header">Header</div>
+          <div class="footer-drawer fclose">
+            <div class="drawer-btn">
+              <span id="drawerClsBtn"></span>
+            </div>
+            <hr />
+            <div class="file-system">
+              <div class="fs-top">
+                <div class="router-bar"></div>
+                <hr />
+                <div class="file-actions">
+                  <button id="back">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  </button>
+                  <label id="label">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </label>
+                  <button id="create-folder">
+                    <i class="fa fa-folder" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <hr />
+              </div>
+              <div class="file-content">
+                <div class="right-click">
+                  <h4>Menu</h4>
+                  <span>Create Folder</span>
+                  <span>Upload File</span>
+                  <span>Delete</span>
+                </div>
+                <!-- <div class="folder item">
+                  <img src="/Music-Player/resources/folder.png" alt="folder" />
+                  <small>Folder</small>
+                </div>
+                <div class="file item">
+                  <img
+                    src="/Music-Player/resources/pngfind.com-music-icon-png-989092.png"
+                    alt="folder"
+                  />
+                  <small>File</small>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/Music-Player/scripts/new.js" type="module"></script>
+    <script src="/Music-Player/scripts/main.js" type="module"></script>
+    <script src="/Music-Player/scripts/drawer.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="expense">
+        <div class="inner">
+          <form id="form" class="form">
+            <label for="input">Name:</label>
+            <br />
+            <input type="text" class="name" required />
+            <br />
+            <label for="date">Date:</label>
+            <br />
+            <input type="date" class="date" required />
+            <br />
+            <label for="amount">Amount</label>
+            <br />
+            <input type="number" class="amount" step="any" required />
+            <br />
+            <label for="select"> Type: </label>
+            <br />
+            <select id="select" required>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+            <br />
+            <button class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="Incomes">
+        <h3>Incomes</h3>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="Expenses">
+        <h3>Expense</h3>
+      </div>
+      <div class="totals">
+        <p class="totalized"></p>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="app.js"></script>
+</html>

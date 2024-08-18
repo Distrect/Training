@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translate</title>
+    <style>
+      #to {
+        position: absolute;
+        border-style: solid;
+        border-width: 1px;
+        width: 300px;
+        height: 30px;
+        opacity: 10;
+      }
+      .loading {
+        text-align: center;
+        align-items: center;
+        background-color: beige;
+        position: fixed;
+        z-index: 1;
+        width: 100vh;
+        height: 100vh;
+        color: black;
+        opacity: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading">a</div>
+    <select id="from" class="selector"></select>
+    <br />
+    <input type="text" class="inp" />
+    <button>Reverse</button>
+    <select id="toer" class="selector"></select>
+    <br />
+    <span id="to">ad</span>
+    <script src="api.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
